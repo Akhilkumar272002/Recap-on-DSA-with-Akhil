@@ -1,0 +1,31 @@
+class Stack:
+    def __init__(self):
+        self.stack=[]
+        self.top=-1
+    
+    def push(self,data):
+        self.stack.append(data)
+        self.top=self.top+1
+    
+    def pop(self):
+        if self.top==-1:
+            return
+        else:
+            self.stack.pop()
+            self.top=self.top-1
+    def size(self):
+        if self.top==-1:
+            return 0
+        else:
+            return self.top+1
+    def prints(self):
+        print(self.stack)
+fi=Stack()
+fi.push(1)
+fi.push(2)
+fi.push(3)
+fi.push(4)
+fi.prints()
+fi.pop()
+fi.prints()
+print(fi.size())
