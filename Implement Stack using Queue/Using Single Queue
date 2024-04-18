@@ -1,0 +1,26 @@
+class Stack_using_Queue:
+    def __init__(self):
+        self.queue=[]
+    def enqueue(self,data):
+        length=len(self.queue)
+        self.queue.append(data)
+        for i in range(length):
+            self.queue.append(self.queue.pop(0))
+    def dequeue(self):
+        if not self.queue:
+            return
+        else:
+            self.queue.pop(0)
+    def display(self):    
+        print(self.queue)
+
+SQ=Stack_using_Queue()
+SQ.enqueue(1)
+SQ.enqueue(2)
+SQ.enqueue(3)
+SQ.enqueue(4)
+SQ.display()
+SQ.dequeue()
+SQ.display()
+SQ.enqueue(5)
+SQ.display()
