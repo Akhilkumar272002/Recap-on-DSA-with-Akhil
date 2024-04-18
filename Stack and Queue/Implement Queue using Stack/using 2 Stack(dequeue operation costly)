@@ -1,0 +1,27 @@
+class Queue_using_Stack:
+    def __init__(self):
+        self.s1=[]
+        self.s2=[]
+    def enqueue(self,data):
+        self.s1.append(data)
+    def dequeue(self):
+        if len(self.s1)==0 and len(self.s2)==0:
+            return
+        elif len(self.s2)==0 and len(self.s1)!=0:
+            while len(self.s1)!=0:
+                self.s2.append(self.s1.pop())
+            self.s2.pop()
+        else:
+            self.s2.pop()
+    def display(self):
+        print(self.s1)
+        print(self.s2)
+
+QS=Queue_using_Stack()
+QS.enqueue(1)
+QS.enqueue(2)
+QS.enqueue(3)
+QS.enqueue(4)
+QS.display()
+QS.dequeue()
+QS.display()
