@@ -1,0 +1,30 @@
+class Queue:
+    def __init__(self):
+        self.queue=[]
+        self.top=-1
+    def enqueue(self,data):
+        self.queue.append(data)
+        self.top=self.top+1 
+    def dequeue(self):
+        if self.top==-1:
+            return
+        else:
+            self.queue.pop(0)
+            self.top=self.top-1
+    def size(self):
+        return self.top+1
+    def printq(self):
+        if self.top==-1:
+            print("Queue Empty")
+        else:
+            print(self.queue)
+            
+q=Queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+q.enqueue(4)
+q.printq()
+q.dequeue()
+q.printq()
+print(q.size())
