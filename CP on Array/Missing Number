@@ -1,0 +1,10 @@
+https://leetcode.com/problems/missing-number/
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        temp=[]
+        for i in range(0,len(nums)+1):
+            temp.append(i)
+        for i in temp:
+            if i not in nums:
+                return i
