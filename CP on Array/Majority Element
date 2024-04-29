@@ -1,0 +1,28 @@
+https://leetcode.com/problems/majority-element/
+
+//hashmap
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        hash={}
+        n=len(nums)//2
+        for i in nums:
+            if i in hash:
+                hash[i]+=1
+            else:
+                hash[i]=1
+        for i in hash:
+            if hash[i]>n:
+                return i
+
+//moore voting algo
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        el=0
+        ct=0
+        for i in nums:
+            if ct==0:
+                ct=1
+                el=i
+            elif el==i: ct+=1
+            else: ct-=1
+        return el
