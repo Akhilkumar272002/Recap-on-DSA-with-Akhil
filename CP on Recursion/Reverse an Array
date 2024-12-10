@@ -1,0 +1,28 @@
+# Reverse an Array
+# ================
+
+# Using Two Pointer
+# -------------------
+def reverse_array(arr,l,r):
+    if r<=l:
+        print(arr)
+        return
+    arr[l],arr[r]=arr[r],arr[l]
+    rev(arr,l+1,r-1)
+
+arr=[1,2,3,4,2,7,8]
+reverse_array(arr,0,len(arr)-1)
+
+# Using One Pointer
+# ----------------
+# let as we have to swap 0 and 4
+# by using l=0 and n=5 it will be l=0 and n-l-1=4, here we are using only one variable
+def rev(arr,l,n):
+    if l>=n/2:
+        print(arr)
+        return
+    arr[l],arr[n-l-1]=arr[n-l-1],arr[l] 
+    rev(arr,l+1,n)
+
+arr=[1,2,3,4,2,7,8]
+rev(arr,0,len(arr))
