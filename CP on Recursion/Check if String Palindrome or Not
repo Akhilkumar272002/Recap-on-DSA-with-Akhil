@@ -1,0 +1,15 @@
+# Check for Palindrome
+# ====================
+
+def palindrome(s,l,n):
+    if s[l]!=s[n-l-1]:
+        return False
+    if l>=n/2:
+        return True
+    return palindrome(s,l+1,n)
+
+
+s="MADAM"
+print(palindrome(s,0,len(s)))  # True
+s="DB"
+print(palindrome(s,0,len(s))   # False
