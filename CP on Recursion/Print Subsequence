@@ -1,0 +1,15 @@
+# Subsequence 
+
+def subs(n,arr,temp):
+    if n<0:
+        print(temp)
+        return
+    ntake=subs(n-1,arr,temp)
+    temp.append(arr[n])
+    take=subs(n-1,arr,temp)
+    temp.pop()
+
+
+arr=[3,2,1]
+temp=[]
+subs(len(arr)-1,arr,temp)
