@@ -16,6 +16,8 @@ if a subset is there then True else False
 Recursion
 '''
 def ps(n,s,arr):
+    if s==0:
+        return True
     if n==0:
         return arr[0]==s
     t=False
